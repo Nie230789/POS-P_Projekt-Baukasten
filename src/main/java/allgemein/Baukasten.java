@@ -56,7 +56,7 @@ public class Baukasten {
 
     public void printAbteilungenSorted() {
         for (HashMap.Entry<String, ArrayList<Bauklotz>> eintrag : abteilungen.entrySet()) {
-            System.out.println(eintrag.getKey() + " (sortiert):");
+            System.out.println(eintrag.getKey() + "-Abteilung (sortiert):");
             eintrag.getValue().sort(Bauklotz::compareTo);
             for (Bauklotz b : eintrag.getValue()) {
                 System.out.println(b);

@@ -35,7 +35,7 @@ public abstract class Bauklotz implements Comparable<Bauklotz> {
     }
 
     @Override
-    public String toString() { //TODO Runden auf 2 Nachkommastellen
+    public String toString() {
         return this.getClass().getName().split("\\.")[1] + " (Volumen: " + this.volumen() + ", Gewicht: " + this.gewicht() + ")";
         //return this.getClass().getName().split("\\.")[1] + " (" + this.farbe +  " Volumen: " + Math.round(this.volumen()) + ", Gewicht: " + Math.round(this.gewicht()) + ")";
     }
