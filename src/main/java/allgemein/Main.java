@@ -8,9 +8,7 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 import java.util.ArrayList;
 
-//Aufgabe 1: Einlesen der CSV Datei
-//Lesen sie die "geschenke.csv" mithilfe des Stream-API's ein!
-//Tipp: BufferedReader.lines() als stream-Quelle
+//Klasse für Aufgabe 1
 
 public class Main {
     public static void main(String[] args) {

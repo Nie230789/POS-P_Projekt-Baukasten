@@ -1,9 +1,6 @@
 package allgemein;
 
-//Aufgabe 2: Implentierung der Klasse "KoerperParameter"
-//Im Konstruktor dieser Klasse werden aus dem übergebenen Parameter (`line`) die einzelnen Felder befüllt.
-//Beachten Sie hier, daß nicht jede Zeile 6 Spalten hat (Würfel, Kugel: 4 Spalten, Zylinder: 5, Quader: 6).
-// Führen Sie eine gründliche Parameterprüfung durch, welche bei allen möglichen Fehlern eine neue `IllegalArgumentException` wirft!
+//Klasse für Aufgabe 2
 
 public class BauklotzParameter {
     private String art, farbe, material;

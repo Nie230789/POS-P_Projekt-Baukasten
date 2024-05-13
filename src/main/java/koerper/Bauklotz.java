@@ -1,8 +1,6 @@
 package koerper;
 
-//Aufgabe 5: compareTo in "Koerper"
-//Wie in der Einleitung erwähnt, sind innerhalb der Abteilungen des Baukastens die Körper nach Farbe zu sortieren (alphabetisch)
-// und bei Gleichheit nach Gewicht (absteigend)
+//Klasse für Aufgabe 5
 
 public abstract class Bauklotz implements Comparable<Bauklotz> {
 

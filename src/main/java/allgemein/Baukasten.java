@@ -5,13 +5,7 @@ import koerper.Bauklotz;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-//Aufgabe 3: Konstruktor von "Baukasten" - einordnen in Abteilungen
-//Im Konstruktor von `Baukasten` wurde der Code entfernt, welcher die Körper in die jeweilige Abteilung einordnet.
-//Die Abteilung eines Körpers wird durch "koerper.getClass().getSimpleName()"`" ermittelt.
-
-//Aufgabe 4: Gesamtgewicht des Baukastens
-//Das Gewicht wird aus Eigengewicht + Summe aller Körpergewichte ermittelt.
-// Vervollständigen Sie die vorhandene Methode!
+//Klasse für Aufgabe 3 & 4
 
 public class Baukasten {
 
