@@ -2,10 +2,9 @@ package allgemein;
 
 import koerper.*;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.stream.Stream;
 import java.util.ArrayList;
 
 //Klasse für Aufgabe 1
@@ -20,14 +19,14 @@ public class Main {
         Baukasten b1 = new Baukasten(10);
         //ArrayList<Bauklotz> tempBauklotzSammlung = new ArrayList<>();
 
-        try (Stream<String> lines = Files.lines(Paths.get(args[0]))) {
-            lines.skip(1).forEach(line -> {
+        try (BufferedReader br = new BufferedReader(new FileReader(args[0]))) {
+            br.lines().skip(1).forEach(line -> {
                 try {
                     Bauklotz bauklotz = getBauklotz(line);
                     b1.addBauklotz(bauklotz);
                     //tempBauklotzSammlung.add(bauklotz);
                 } catch (RuntimeException e) {
-                    System.out.println("FEHLER: (" + e.getMessage() + ") " + line);
+                    System.err.println("FEHLER: (" + e.getMessage() + ") " + line);
                 }
             });
         } catch (IOException e) {
