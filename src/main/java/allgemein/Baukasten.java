@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class Baukasten {
 
-    private final double eigengewicht;
+    private final double eigengewicht;//Einheit: kg
     private final HashMap<String, ArrayList<Bauklotz>> abteilungen;
 
     public Baukasten(double eigengewicht) {
@@ -35,17 +35,18 @@ public class Baukasten {
                 gesamtgewicht += b.gewicht();
             }
         }
-        return gesamtgewicht + eigengewicht;
+        return (gesamtgewicht / 1000) + eigengewicht;//wandelt g in kg um
     }
 
 //PRINT-METHODEN
     public void printAbteilungen() {
         for (HashMap.Entry<String, ArrayList<Bauklotz>> eintrag : abteilungen.entrySet()) {
-            System.out.println("Abteilung: " + eintrag.getKey());
+            System.out.println(eintrag.getKey() + "-Abteilung:" );
             for (Bauklotz b : eintrag.getValue()) {
                 System.out.println(b);
             }
         }
+        System.out.println();
     }
 
     public void printAbteilungenSorted() {
@@ -56,6 +57,11 @@ public class Baukasten {
                 System.out.println(b);
             }
         }
+        System.out.println();
+    }
+
+    public void printGesamtgewicht() {
+        System.out.println("\nGesamtgewicht des Baukastens: " + this.berechneGesamtgewicht() + "kg\n");
     }
 
 }

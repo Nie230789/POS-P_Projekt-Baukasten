@@ -4,7 +4,7 @@ package allgemein;
 
 public class BauklotzParameter {
     private String art, farbe, material;
-    private double double1, double2, double3;
+    private double double1, double2, double3;//Einheit: cm
 
     public BauklotzParameter(String line) {
         String[] splitter = line.split(";");
@@ -32,7 +32,7 @@ public class BauklotzParameter {
                 this.setDouble3(Double.parseDouble(splitter[5]));
                 break;
             default:
-                throw new IllegalArgumentException("Ungueltige Parameter!");
+                throw new IllegalArgumentException("Ungueltige Parameteranzahl!");
         }
     }
 
@@ -101,13 +101,13 @@ public class BauklotzParameter {
     }
 
 //METHODEN
-    public double setDichte() {
+    public double setDichte() {//Einheit: g/cm^3
         // Setzt die Dichte abhängig vom gegebenen Material
-        return switch (this.getMaterial()) {
-            case "Eichenholz" -> 1;
-            case "Buchenholz" -> 0.6;
-            case "Kiefernholz" -> 2;
-            case "Fichtenholz" -> 0.9;
+        return switch (this.material) {
+            case "Eichenholz" -> 0.67;
+            case "Buchenholz" -> 0.68;
+            case "Kiefernholz" -> 0.52;
+            case "Fichtenholz" -> 0.46;
             default -> throw new IllegalArgumentException("Unbekanntes Material: " + this.material);
         };
     }

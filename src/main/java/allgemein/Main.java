@@ -16,7 +16,7 @@ public class Main {
             System.exit(1);
         }
 
-        Baukasten b1 = new Baukasten(10);
+        Baukasten b1 = new Baukasten(4);
         //ArrayList<Bauklotz> tempBauklotzSammlung = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(args[0]))) {
@@ -26,7 +26,7 @@ public class Main {
                     b1.addBauklotz(bauklotz);
                     //tempBauklotzSammlung.add(bauklotz);
                 } catch (RuntimeException e) {
-                    System.err.println("FEHLER: (" + e.getMessage() + ") " + line);
+                    System.err.println("FEHLER (" + e.getMessage() + "): " + line);
                 }
             });
         } catch (IOException e) {
@@ -39,14 +39,13 @@ public class Main {
         //System.out.println();
         //tempBauklotzSammlung.sort(Bauklotz::compareTo);
         //for (Bauklotz b : tempBauklotzSammlung) {System.out.println(b);}
+
 // Baukasten - Gesamtgewicht
-        System.out.println("\nGesamtgewicht des Baukastens: " + b1.berechneGesamtgewicht() + "\n");
+        b1.printGesamtgewicht();
 // Baukasten - Abteilungen unsortiert
         //b1.printAbteilungen();
-        //System.out.println();
 // Baukasten - Abteilungen sortiert
         b1.printAbteilungenSorted();
-        System.out.println();
 
     }
 
